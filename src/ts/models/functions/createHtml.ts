@@ -1,10 +1,13 @@
-import { getPodcasts } from "./api";
+import { IPodcast } from "../IPodcast";
+import { getPodcasts } from "../../services/api";
 
-const podCastContainer = document.querySelector(".section__podlist-pods");
+const podCastContainer = document.querySelector(
+  ".section__podlist-pods"
+) as HTMLElement;
 
 export async function createHtml() {
-  const podCasts = await getPodcasts();
-  podCasts.programs.forEach((podcast) => {
+  const podCasts: IPodcast[] = await getPodcasts();
+  podCasts.forEach((podcast) => {
     const innerArticle = createInnerArticle();
 
     createImg();
