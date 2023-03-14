@@ -1,0 +1,89 @@
+@use "variables" as v;
+@use "mixins";
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.podlist {
+  //   display: flex;
+  height: 100vh;
+  //   @include mixins.desktop {
+  //     flex-direction: row;
+  //     max-width: 80%;
+  //   }
+
+  &__wrapper {
+    border: dotted;
+  }
+
+  &__podcast {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+  }
+
+  &__div {
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.87);
+    cursor: pointer;
+    link:active,
+    link:hover {
+      color: rgb(85, 85, 218);
+    }
+  }
+
+  &__image {
+    margin-top: 0.5rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  &__infotext {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+.darkmode {
+  background-color: antiquewhite;
+  color: #242424;
+}
+
+.darkmode a {
+  color: #242424;
+}
+
+.darkmode a:active,
+.darkmode a:hover {
+  color: rgb(85, 85, 218);
+}
+
+// @media screen and (min-width: 768px) {
+//   .podlist__wrapper {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
+
+@media screen and (min-width: 1000px) {
+  .podlist__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .podlist__wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
