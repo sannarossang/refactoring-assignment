@@ -2,25 +2,18 @@ import { IPodcast } from "../IPodcast";
 import { getPodcasts } from "../../services/api";
 
 const podCastContainer = document.querySelector(
-  ".section__podlist-pods"
+  ".podlist__wrapper"
 ) as HTMLElement;
 
 export async function createHtml() {
   const podCasts: IPodcast[] = await getPodcasts();
   podCasts.forEach((podcast) => {
     const innerArticle = createInnerArticle();
-
-    createImg();
-
     const textDiv = createTextDiv();
-
-    createHeader();
-    createP();
-    createLink();
 
     function createInnerArticle() {
       const innerArticle = document.createElement("article");
-      innerArticle.setAttribute("class", "section__article-innerarticle");
+      innerArticle.setAttribute("class", "podlist__podcast");
       innerArticle.setAttribute("tabindex", "1");
       podCastContainer.appendChild(innerArticle);
       return innerArticle;
@@ -28,13 +21,14 @@ export async function createHtml() {
 
     function createTextDiv() {
       const textDiv = document.createElement("div");
-      textDiv.setAttribute("class", "section__article-div");
+      textDiv.setAttribute("class", "podlist__div");
       innerArticle.appendChild(textDiv);
       return textDiv;
     }
 
     function createLink() {
       const linkPlacement = document.createElement("a");
+      linkPlacement.setAttribute("class", "podlist__link");
       const linkText = document.createTextNode("Lyssna här");
       linkPlacement.setAttribute("href", podcast.programurl);
       linkPlacement.setAttribute("tabindex", "1");
@@ -43,6 +37,7 @@ export async function createHtml() {
     }
     function createImg() {
       const imgPlacement = document.createElement("IMG");
+      imgPlacement.setAttribute("class", "podlist__image");
       imgPlacement.setAttribute("src", podcast.socialimage);
       imgPlacement.setAttribute("width", "100");
       imgPlacement.setAttribute("height", "100");
@@ -51,6 +46,7 @@ export async function createHtml() {
 
     function createP() {
       const descPlacement = document.createElement("p");
+      descPlacement.setAttribute("class", "podlist__infotext");
       const desc = document.createTextNode(podcast.description);
       descPlacement.appendChild(desc);
       textDiv.appendChild(descPlacement);
@@ -58,10 +54,16 @@ export async function createHtml() {
 
     function createHeader() {
       const headerPlacement = document.createElement("h2");
+      headerPlacement.setAttribute("class", "podlist__title");
       const programName = document.createTextNode(podcast.name);
       headerPlacement.appendChild(programName);
       textDiv.appendChild(headerPlacement);
     }
+
+    createImg();
+    createHeader();
+    createP();
+    createLink();
   });
 }
 
