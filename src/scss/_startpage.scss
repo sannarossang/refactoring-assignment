@@ -3,7 +3,7 @@
 
 .podlist {
   &__wrapper {
-    border: dotted;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     @include mixins.desktop {
       grid-template-columns: 1fr 1fr 1fr;
     }
