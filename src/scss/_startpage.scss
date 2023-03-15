@@ -1,21 +1,22 @@
 @use "variables" as v;
 @use "mixins";
 
-h1 {
-  font-size: 2.5rem;
-  text-align: center;
-}
-
 .podlist {
-  //   display: flex;
-  height: 100vh;
-  //   @include mixins.desktop {
-  //     flex-direction: row;
-  //     max-width: 80%;
-  //   }
-
   &__wrapper {
     border: dotted;
+    @include mixins.desktop {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include mixins.tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__header {
+    font-size: 2.5rem;
+    text-align: center;
   }
 
   &__podcast {
@@ -49,7 +50,7 @@ h1 {
     margin: 0;
   }
 
-  &__infotext {
+  &__description {
     font-size: 1rem;
     margin: 0;
   }
@@ -58,32 +59,11 @@ h1 {
 .darkmode {
   background-color: antiquewhite;
   color: #242424;
-}
-
-.darkmode a {
-  color: #242424;
-}
-
-.darkmode a:active,
-.darkmode a:hover {
-  color: rgb(85, 85, 218);
-}
-
-// @media screen and (min-width: 768px) {
-//   .podlist__wrapper {
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
-
-@media screen and (min-width: 1000px) {
-  .podlist__wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .podlist__wrapper {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  & a {
+    color: #242424;
+    &:active,
+    &:hover {
+      color: rgb(85, 85, 218);
+    }
   }
 }
