@@ -9,6 +9,7 @@ export async function createHtml() {
   const podCasts: IPodcast[] = await getPodcasts();
   podCasts.forEach((podcast) => {
     const innerArticle = createInnerArticle();
+    createImg();
     const textDiv = createTextDiv();
 
     function createInnerArticle() {
@@ -35,6 +36,7 @@ export async function createHtml() {
       linkPlacement.appendChild(linkText);
       textDiv.appendChild(linkPlacement);
     }
+
     function createImg() {
       const imgPlacement = document.createElement("IMG");
       imgPlacement.setAttribute("class", "podlist__image");
@@ -46,7 +48,7 @@ export async function createHtml() {
 
     function createP() {
       const descPlacement = document.createElement("p");
-      descPlacement.setAttribute("class", "podlist__infotext");
+      descPlacement.setAttribute("class", "podlist__description");
       const desc = document.createTextNode(podcast.description);
       descPlacement.appendChild(desc);
       textDiv.appendChild(descPlacement);
@@ -60,7 +62,6 @@ export async function createHtml() {
       textDiv.appendChild(headerPlacement);
     }
 
-    createImg();
     createHeader();
     createP();
     createLink();
