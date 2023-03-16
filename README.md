@@ -8,9 +8,9 @@ G
 - [/] Enhetlig kodkvalitet
 - [x] Mobilvyn
 - [ ] Språk
-- [ ] Rensa loggning
-- [ ] Dokumentation
-- [ ] Tillgänglighet (bilder)
+- [/] Rensa loggning
+- [/] Dokumentation
+- [x] Tillgänglighet (bilder)
 - [ ] Refaktorera funktioner
 - [ ] Eliminera onödig kod
 - [ ] Rensa bort kod som inte ska sättas

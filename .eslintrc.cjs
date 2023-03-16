@@ -3,13 +3,22 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  plugins: ["prettier"],
-  extends: ["standard-with-typescript", "plugin:prettier/recommended"],
-  overrides: [],
+  plugins: ['prettier', '@typescript-eslint'],
+  extends: ['standard-with-typescript', 'plugin:prettier/recommended', 'eslint:recommended'],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:@typescript-eslint/eslint-recommended',
+      ],
+    },
+  ],
   parserOptions: {
-    ecmaVersion: "latest",
+    ecmaVersion: 'latest',
+    project: true,
+    sourceType: 'module',
   },
-  //   rules: {
-  //     prettier/prettier: "error",
-  // },
+  parser: '@typescript-eslint/parser',
 };
