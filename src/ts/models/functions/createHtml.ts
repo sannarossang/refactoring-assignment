@@ -12,8 +12,9 @@ export async function createHtml(): Promise<void> {
     const textDiv = createTextDiv();
     const imgPlacement = createImg(podcast.socialimage, podcast.name);
     const linkPlacement = createLink(podcast.programurl);
-    const descPlacement = createP(podcast.description);
-    const headerPlacement = createHeader(podcast.name);
+    // eslint-disable-next-line
+    const descPlacement = createElement("p", "podlist__description", podcast.description);
+    const headerPlacement = createElement("h2", "podlist__title", podcast.name);
 
     podCastContainer.appendChild(innerArticle);
     innerArticle.appendChild(imgPlacement);
@@ -59,20 +60,13 @@ function createImg(img: string, name: string): HTMLElement {
   return imgPlacement;
 }
 
-function createP(description: string): HTMLParagraphElement {
-  const descPlacement = document.createElement("p");
-  descPlacement.setAttribute("class", "podlist__description");
+// eslint-disable-next-line
+function createElement(element: string, cssClass: string, description: string): HTMLElement {
+  const descPlacement = document.createElement(element);
+  descPlacement.setAttribute("class", cssClass);
   const desc = document.createTextNode(description);
   descPlacement.appendChild(desc);
   return descPlacement;
-}
-
-function createHeader(podname: string): HTMLHeadElement {
-  const headerPlacement = document.createElement("h2");
-  headerPlacement.setAttribute("class", "podlist__title");
-  const programName = document.createTextNode(podname);
-  headerPlacement.appendChild(programName);
-  return headerPlacement;
 }
 
 export default createHtml;
