@@ -27,7 +27,6 @@ export async function createHtml(): Promise<void> {
 function createInnerArticle(): HTMLElement {
   const innerArticle = document.createElement("article");
   innerArticle.setAttribute("class", "podlist__podcast");
-  innerArticle.setAttribute("tabindex", "1");
   return innerArticle;
 }
 
@@ -42,7 +41,6 @@ function createLink(url: string): HTMLAnchorElement {
   linkPlacement.setAttribute("class", "podlist__link");
   const linkText = document.createTextNode("Lyssna här");
   linkPlacement.setAttribute("href", url);
-  linkPlacement.setAttribute("tabindex", "1");
   linkPlacement.appendChild(linkText);
   return linkPlacement;
 }
