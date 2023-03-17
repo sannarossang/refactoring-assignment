@@ -1,10 +1,10 @@
-import '../scss/main.scss';
-import { createHtml } from '../ts/models/functions/createHtml';
-import { toggleLightMode } from '../ts/models/functions/toggleDarkmode';
+import "../scss/main.scss";
+import { createHtml } from "../ts/models/functions/createHtml";
+import { toggleLightMode } from "../ts/models/functions/toggleDarkmode";
 
-function init() {
+async function init(): Promise<void> {
   toggleLightMode();
-  createHtml();
+  await createHtml();
 }
 
-init();
+void init();
