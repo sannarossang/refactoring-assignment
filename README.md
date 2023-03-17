@@ -5,13 +5,13 @@ G
 - [x] CSS till Sass
 - [x] Enhetlig namngivning i CSS:en
 - [x] Konvertera till TypeScript
-- [/] Enhetlig kodkvalitet
+- [x] Enhetlig kodkvalitet
 - [x] Mobilvyn
-- [ ] Språk
+- [x] Språk
 - [/] Rensa loggning
 - [/] Dokumentation
 - [x] Tillgänglighet (bilder)
-- [ ] Refaktorera funktioner
+- [x] Refaktorera funktioner
 - [ ] Eliminera onödig kod
 - [ ] Rensa bort kod som inte ska sättas
 
