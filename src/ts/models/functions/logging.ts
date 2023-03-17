@@ -1,8 +1,7 @@
-import * as dotenv from "dotenv";
-dotenv.config();
+export function logMessage(message: any): void {
+  const shouldLog: boolean = process.env.VITE_TEST_LOGGING_ENABLED === "true";
 
-export function logMessage(message: any) {
-  if (process.env.LOGGING_ENABLED) {
-    console.log(message);
+  if (shouldLog) {
+    logMessage(message);
   }
 }
