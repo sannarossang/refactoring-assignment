@@ -1,12 +1,11 @@
 import { logMessage } from "./logging";
 
-const toggleLightModeButton = document.querySelector(
-  ".toggle-btn"
-) as HTMLButtonElement;
+// eslint-disable-next-line
+const toggleLightModeButton = document.querySelector(".toggle-btn") as HTMLButtonElement;
 toggleLightModeButton.addEventListener("click", toggleLightMode);
 console.log(toggleLightModeButton);
 
-export function toggleLightMode() {
+export function toggleLightMode(): void {
   document.body.classList.toggle("darkmode");
   if (document.body.classList.contains("darkmode")) {
     toggleLightModeButton.innerHTML = "Välj mörkt läge";

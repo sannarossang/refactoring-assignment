@@ -1,6 +1,5 @@
 import type { IPodcast } from "../IPodcast";
 import { getPodcasts } from "../../services/api";
-import { link } from "fs";
 
 // eslint-disable-next-line
 const podCastContainer = document.querySelector(".podlist__wrapper") as HTMLElement;
