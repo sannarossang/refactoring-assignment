@@ -8,8 +8,10 @@ export async function createHtml(): Promise<void> {
   const podCasts: IPodcast[] = await getPodcasts();
   // eslint-disable-next-line
   podCasts.forEach(podcast => {
-    const innerArticle = createInnerArticle();
-    const textDiv = createTextDiv();
+    // eslint-disable-next-line
+    const innerArticle = createElementWithAttribute("article", "podlist__podcast");
+    // eslint-disable-next-line
+    const textDiv = createElementWithAttribute("div", "podlist__div");
     const imgPlacement = createImg(podcast.socialimage, podcast.name);
     const linkPlacement = createLink(podcast.programurl);
     // eslint-disable-next-line
@@ -23,18 +25,6 @@ export async function createHtml(): Promise<void> {
     textDiv.appendChild(descPlacement);
     textDiv.appendChild(linkPlacement);
   });
-}
-
-function createInnerArticle(): HTMLElement {
-  const innerArticle = document.createElement("article");
-  innerArticle.setAttribute("class", "podlist__podcast");
-  return innerArticle;
-}
-
-function createTextDiv(): HTMLDivElement {
-  const textDiv = document.createElement("div");
-  textDiv.setAttribute("class", "podlist__div");
-  return textDiv;
 }
 
 function createLink(url: string): HTMLAnchorElement {
@@ -61,12 +51,19 @@ function createImg(img: string, name: string): HTMLElement {
 }
 
 // eslint-disable-next-line
-function createElement(element: string, cssClass: string, description: string): HTMLElement {
-  const descPlacement = document.createElement(element);
-  descPlacement.setAttribute("class", cssClass);
+function createElement(elementString: string, cssClass: string, description: string): HTMLElement {
+  const element = document.createElement(elementString);
+  element.setAttribute("class", cssClass);
   const desc = document.createTextNode(description);
-  descPlacement.appendChild(desc);
-  return descPlacement;
+  element.appendChild(desc);
+  return element;
+}
+
+// eslint-disable-next-line
+function createElementWithAttribute(elementString: string, cssClass: string): HTMLElement {
+  const element = document.createElement(elementString);
+  element.setAttribute("class", cssClass);
+  return element;
 }
 
 export default createHtml;
