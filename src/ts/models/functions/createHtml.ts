@@ -8,12 +8,15 @@ export async function createHtml(): Promise<void> {
   const podCasts: IPodcast[] = await getPodcasts();
   // eslint-disable-next-line
   podCasts.forEach(podcast => {
-    const innerArticle = createInnerArticle();
-    const textDiv = createTextDiv();
+    // eslint-disable-next-line
+    const innerArticle = createElementWithAttribute("article", "podlist__podcast");
+    // eslint-disable-next-line
+    const textDiv = createElementWithAttribute("div", "podlist__div");
     const imgPlacement = createImg(podcast.socialimage, podcast.name);
     const linkPlacement = createLink(podcast.programurl);
-    const descPlacement = createP(podcast.description);
-    const headerPlacement = createHeader(podcast.name);
+    // eslint-disable-next-line
+    const descPlacement = createElement("p", "podlist__description", podcast.description);
+    const headerPlacement = createElement("h2", "podlist__title", podcast.name);
 
     podCastContainer.appendChild(innerArticle);
     innerArticle.appendChild(imgPlacement);
@@ -24,25 +27,11 @@ export async function createHtml(): Promise<void> {
   });
 }
 
-function createInnerArticle(): HTMLElement {
-  const innerArticle = document.createElement("article");
-  innerArticle.setAttribute("class", "podlist__podcast");
-  innerArticle.setAttribute("tabindex", "1");
-  return innerArticle;
-}
-
-function createTextDiv(): HTMLDivElement {
-  const textDiv = document.createElement("div");
-  textDiv.setAttribute("class", "podlist__div");
-  return textDiv;
-}
-
 function createLink(url: string): HTMLAnchorElement {
   const linkPlacement = document.createElement("a");
   linkPlacement.setAttribute("class", "podlist__link");
   const linkText = document.createTextNode("Lyssna här");
   linkPlacement.setAttribute("href", url);
-  linkPlacement.setAttribute("tabindex", "1");
   linkPlacement.appendChild(linkText);
   return linkPlacement;
 }
@@ -61,20 +50,20 @@ function createImg(img: string, name: string): HTMLElement {
   return imgPlacement;
 }
 
-function createP(description: string): HTMLParagraphElement {
-  const descPlacement = document.createElement("p");
-  descPlacement.setAttribute("class", "podlist__description");
+// eslint-disable-next-line
+function createElement(elementString: string, cssClass: string, description: string): HTMLElement {
+  const element = document.createElement(elementString);
+  element.setAttribute("class", cssClass);
   const desc = document.createTextNode(description);
-  descPlacement.appendChild(desc);
-  return descPlacement;
+  element.appendChild(desc);
+  return element;
 }
 
-function createHeader(podname: string): HTMLHeadElement {
-  const headerPlacement = document.createElement("h2");
-  headerPlacement.setAttribute("class", "podlist__title");
-  const programName = document.createTextNode(podname);
-  headerPlacement.appendChild(programName);
-  return headerPlacement;
+// eslint-disable-next-line
+function createElementWithAttribute(elementString: string, cssClass: string): HTMLElement {
+  const element = document.createElement(elementString);
+  element.setAttribute("class", cssClass);
+  return element;
 }
 
 export default createHtml;
