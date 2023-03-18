@@ -20,13 +20,39 @@ Mammas nya kille, Så funkar det eller Lantzkampen? Valet är ditt! SRs Humorpro
 
 ---
 
-En beskrivning på vilka tekniker som använts (shields/badges)
+- Vite.js
+- Typescript
+- SASS
+- Axios
+- ESLint
 
 ### Kom igång
 
 ---
 
-En kort kom igång-guide till projektet
+1. Klona projektets repo genom att köra följande kommando i din terminal:
+
+   ```bash
+   git clone https://github.com/Medieinstitutet/inlamningsuppgift-1-sannarossang.git
+   ```
+
+2. Navigera till rätt mapp i din terminal
+
+   ```bash
+   cd inlamningsuppgift-1-sanna-rossang
+   ```
+
+3. Installera npm-paket som behövs för projektet
+
+```bash
+npm install
+```
+
+4. Kör igång projektet
+
+```bash
+npm run dev
+```
 
 ---
 
