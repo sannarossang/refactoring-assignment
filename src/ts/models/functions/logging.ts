@@ -1,7 +1,13 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+const loggingEnabled: string = import.meta.env.VITE_APP_LOGGING_ENABLED;
+
 export function logMessage(message: any): void {
-  const shouldLog: boolean = process.env.VITE_TEST_LOGGING_ENABLED === "true";
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  const shouldLog: boolean = loggingEnabled === "true";
 
   if (shouldLog) {
-    logMessage(message);
+    console.log(message);
   }
 }

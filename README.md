@@ -70,8 +70,8 @@ G
 - [x] Enhetlig kodkvalitet
 - [x] Mobilvyn
 - [x] Språk
-- [/] Rensa loggning
-- [/] Dokumentation
+- [/->VG-delen] Rensa loggning
+- [x] Dokumentation
 - [x] Tillgänglighet (bilder)
 - [x] Refaktorera funktioner
 - [x] Eliminera onödig kod
@@ -79,13 +79,13 @@ G
 
 VG
 
-- [ ] Rätt sak på rätt plats
-- [/] Hantera loggning på ett effektivt sätt
-- [ ] Gör en tillgänglighetsgranskning av sidan
+- [x] Rätt sak på rätt plats
+- [x] Hantera loggning på ett effektivt sätt
+- [-] Gör en tillgänglighetsgranskning av sidan
 - [x] Utnyttja features i Sass i CSS:en
-- [/] Rensa bort paket som inte används
-- [ ] Hantera fel i API-anropet
-- [ ] Gör en Lighthouse-analys
-- [ ] Läs av utvecklingsmiljön
+- [x] Rensa bort paket som inte används
+- [x] Hantera fel i API-anropet
+- [-] Gör en Lighthouse-analys
+- [-] Läs av utvecklingsmiljön
 - [x] Enhetlig syntax i CSS:en
-- [ ] Publicera sidan på GitHub pages
+- [-] Publicera sidan på GitHub pages
