@@ -1,6 +1,5 @@
 import { logMessage } from "./logging";
 
-// eslint-disable-next-line
 const toggleLightModeButton = document.querySelector(".toggle-btn") as HTMLButtonElement;
 toggleLightModeButton.addEventListener("click", toggleLightMode);
 
