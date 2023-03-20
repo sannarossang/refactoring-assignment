@@ -10,11 +10,11 @@ Mammas nya kille, Så funkar det eller Lantzkampen? Valet är ditt! SRs Humorpro
 
 ### Mobile first (ofc!)
 
-    ![Mobilvy av SRs Humorprogram](https://raw.githubusercontent.com/Medieinstitutet/inlamningsuppgift-1-sannarossang/main/assets/mobile-humor-sr.jpg?token=GHSAT0AAAAAABYWZKA4O6DXSFQH4RGM4Q7WZAYPTBQ)
+    ![Mobilvy] (https://raw.githubusercontent.com/Medieinstitutet/inlamningsuppgift-1-sannarossang/main/assets/mobile-humor-sr.jpg?token=GHSAT0AAAAAABYWZKA4O6DXSFQH4RGM4Q7WZAYPTBQ)
 
 ### And then there is.. desktop (woop woop!)
 
-    ![Desktopvy av SRs Humorprogram](https://raw.githubusercontent.com/Medieinstitutet/inlamningsuppgift-1-sannarossang/main/assets/desktop-humor-sr.jpg?token=GHSAT0AAAAAABYWZKA55AL6Z2YZGG4UHIDOZAYPSCQ)
+    ![Desktopvy] (https://raw.githubusercontent.com/Medieinstitutet/inlamningsuppgift-1-sannarossang/main/assets/desktop-humor-sr.jpg?token=GHSAT0AAAAAABYWZKA55AL6Z2YZGG4UHIDOZAYPSCQ)
 
 ### Tekniker :bulb:
 
