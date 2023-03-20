@@ -3,31 +3,6 @@ import { getPodcasts } from "../../services/api";
 
 const podCastContainer = document.querySelector(".podlist__wrapper") as HTMLElement;
 
-export async function createHtml(): Promise<void> {
-  const podCasts: IPodcast[] = await getPodcasts();
-  if (podCasts.length === 0) {
-    const errorText = createElement("div", "podlist__error", "Hoppsan, här blev det lite tokigt!");
-    podCastContainer.appendChild(errorText);
-  } else {
-    // eslint-disable-next-line
-    podCasts.forEach(podcast => {
-      const innerArticle = createElementWithAttribute("article", "podlist__podcast");
-      const textDiv = createElementWithAttribute("div", "podlist__div");
-      const imgPlacement = createImg(podcast.socialimage, podcast.name);
-      const linkPlacement = createLink(podcast.programurl);
-      const descPlacement = createElement("p", "podlist__description", podcast.description);
-      const headerPlacement = createElement("h2", "podlist__title", podcast.name);
-
-      podCastContainer.appendChild(innerArticle);
-      innerArticle.appendChild(imgPlacement);
-      innerArticle.appendChild(textDiv);
-      textDiv.appendChild(headerPlacement);
-      textDiv.appendChild(descPlacement);
-      textDiv.appendChild(linkPlacement);
-    });
-  }
-}
-
 function createLink(url: string): HTMLAnchorElement {
   const linkPlacement = document.createElement("a");
   linkPlacement.setAttribute("class", "podlist__link");
@@ -51,7 +26,6 @@ function createImg(img: string, name: string): HTMLElement {
   return imgPlacement;
 }
 
-// eslint-disable-next-line
 function createElement(elementString: string, cssClass: string, description: string): HTMLElement {
   const element = document.createElement(elementString);
   element.setAttribute("class", cssClass);
@@ -60,11 +34,34 @@ function createElement(elementString: string, cssClass: string, description: str
   return element;
 }
 
-// eslint-disable-next-line
 function createElementWithAttribute(elementString: string, cssClass: string): HTMLElement {
   const element = document.createElement(elementString);
   element.setAttribute("class", cssClass);
   return element;
+}
+
+export async function createHtml(): Promise<void> {
+  const podCasts: IPodcast[] = await getPodcasts();
+  if (podCasts.length === 0) {
+    const errorText = createElement("div", "podlist__error", "Hoppsan, här blev det lite tokigt!");
+    podCastContainer.appendChild(errorText);
+  } else {
+    podCasts.forEach(podcast => {
+      const innerArticle = createElementWithAttribute("article", "podlist__podcast");
+      const textDiv = createElementWithAttribute("div", "podlist__div");
+      const imgPlacement = createImg(podcast.socialimage, podcast.name);
+      const linkPlacement = createLink(podcast.programurl);
+      const descPlacement = createElement("p", "podlist__description", podcast.description);
+      const headerPlacement = createElement("h2", "podlist__title", podcast.name);
+
+      podCastContainer.appendChild(innerArticle);
+      innerArticle.appendChild(imgPlacement);
+      innerArticle.appendChild(textDiv);
+      textDiv.appendChild(headerPlacement);
+      textDiv.appendChild(descPlacement);
+      textDiv.appendChild(linkPlacement);
+    });
+  }
 }
 
 export default createHtml;
