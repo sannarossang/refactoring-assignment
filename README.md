@@ -56,6 +56,15 @@ npm run dev
 
 ---
 
+### Tillgänglighetsgranskning/Lighthouse
+
+![Lighthouse analys](./assets/lighthouse-for-SR.jpg)
+
+I min Lighthouse-analys fick jag nedslag på att det saknades en metabeskrivning för sidan, så jag la till det. 
+I tillgänglighetsgranskningen fick jag inte fram några fel. 
+
+---
+
 ### Betygsunderlag :technologist:
 
 ---
